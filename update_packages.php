@@ -12,7 +12,6 @@ if(isset($_POST['submit'])){
   $name=$_POST['name'];
   $country=$_POST['country'];
   $state=$_POST['state'];
-  $modes=$_POST['modes'];
   $description=$_POST['description'];
   //image1
     $filename=$_FILES["photo"]["name"];
@@ -63,10 +62,10 @@ if(isset($_POST['submit'])){
         move_uploaded_file($tempname,$folder);
     }
 
-    $sql1=mysqli_query($conn,"UPDATE Packages SET p_image = '$image',p_image1 = '$image1',p_image2 = '$image2',p_name = '$name',country = '$country',state = '$state',district = '$district',p_description = '$description' WHERE p_id='$id'");
+    $sql1=mysqli_query($conn,"UPDATE Packages SET p_image ='$image',p_image1 ='$image1',p_image2 ='$image2',p_name ='$name',country ='$country',state = '$state',p_description = '$description' WHERE p_id='$id'");
     if($sql1)
     {
-        echo '<script> alert("updated sucessfully");window.location.href="home.php";</script>';
+        echo '<script> alert("updated sucessfully");window.location.href="view_packages.php";</script>';
     }
     else{
         echo '<script> alert("something went wrong");</script>';
@@ -75,12 +74,6 @@ if(isset($_POST['submit'])){
 }
 
 ?>
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,14 +107,6 @@ if(isset($_POST['submit'])){
       margin-top: 50px;
     }
   </style>
-
-  <!-- =======================================================
-  * Template Name: FlexStart
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -139,11 +124,9 @@ if(isset($_POST['submit'])){
         <ul>
           <li><a class="nav-link scrollto active" href="home.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
           <li><a class="nav-link scrollto " href="#portfolio">Profile</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a href="view_orders.php">Orders</a></li> 
-          <!-- <li><a href="blog.html">Blog</a></li> -->
           <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="view_users.php">Users</a></li>
@@ -151,42 +134,12 @@ if(isset($_POST['submit'])){
                 <ul>
                   <li><a href="add_packages.php">Add Package</a></li>
                   <li><a href="view_packages.php">View Package</a></li>
-                  <!-- <li><a href="#">Edit Package</a></li>
-                  <li><a href="#">Remove Package</a></li> -->
-                  <!-- <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li> -->
                 </ul>
               </li>
               <li><a href="quires.php">Quires</a></li>
               <li><a href="feedback.php">Feedback</a></li>
             </ul>
           </li>
-
-          <!-- <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li>
-                <a href="#">Column 1 link 1</a>
-                <a href="#">Column 1 link 2</a>
-                <a href="#">Column 1 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 2 link 1</a>
-                <a href="#">Column 2 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 3 link 1</a>
-                <a href="#">Column 3 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 4 link 1</a>
-                <a href="#">Column 4 link 2</a>
-                <a href="#">Column 4 link 3</a>
-              </li>
-            </ul>
-          </li> -->
-
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="getstarted scrollto" href="logout.php">Logout</a></li>
         </ul>
@@ -231,28 +184,11 @@ if(isset($_POST['submit'])){
         <span class="input-group-text">Description</span>
         <textarea class="form-control" name="description" placeholder="package description" aria-label="With textarea" value="<?php echo $row['p_name'];?>" value="<?php echo $row['p_description'];?>" ></textarea>
       </div>
-      
-      
       <button class="btn btn-warning" name="submit" style="margin-top: 30px;">update</button>
-      
-      
     </form>
-    
-    
-    
-    
-    
-    
-    
     </div>
     </div>
     </section>
-
-
-
-
-
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

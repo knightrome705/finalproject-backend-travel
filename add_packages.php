@@ -8,12 +8,7 @@ if(isset($_POST['submit'])){
   $name=$_POST['name'];
   $country=$_POST['country'];
   $state=$_POST['state'];
-  $district=$_POST['district'];
-  $place=$_POST['place'];
-  $modes=$_POST['modes'];
-  $duration=$_POST['duration'];
   $description=$_POST['description'];
-  $price=$_POST['price'];
   //first_image
   $filename=$_FILES["photo"]["name"];
     $tempname=$_FILES["photo"]["tmp_name"];
@@ -62,7 +57,7 @@ if(isset($_POST['submit'])){
     }else{
         move_uploaded_file($tempname,$folder);
     }
-  $sql=mysqli_query($conn,"INSERT INTO Packages(p_image,p_image1,p_image2,p_name,country,state,p_description) VALUES('$image','$image1','$image2','$name','$country','$state','$place','$description')");
+  $sql=mysqli_query($conn,"INSERT INTO Packages(p_image,p_image1,p_image2,p_name,country,state,p_description) VALUES('$image','$image1','$image2','$name','$country','$state','$description')");
   if($sql)
   {
       echo'<script> alert("Added successfully");
@@ -107,21 +102,11 @@ if(isset($_POST['submit'])){
         margin-top: 60px;
       
     }
-    
-
-
   </style>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: FlexStart
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -139,11 +124,9 @@ if(isset($_POST['submit'])){
         <ul>
           <li><a class="nav-link scrollto active" href="home.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
           <li><a class="nav-link scrollto " href="#portfolio">Profile</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a href="view_orders.php">Orders</a></li> 
-          <!-- <li><a href="blog.html">Blog</a></li> -->
           <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="view_users.php">Users</a></li>
@@ -151,42 +134,12 @@ if(isset($_POST['submit'])){
                 <ul>
                   <li><a href="add_packages.php">Add Package</a></li>
                   <li><a href="view_packages.php">View Package</a></li>
-                  <!-- <li><a href="#">Edit Package</a></li>
-                  <li><a href="#">Remove Package</a></li> -->
-                  <!-- <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li> -->
                 </ul>
               </li>
               <li><a href="quires.php">Quires</a></li>
               <li><a href="feedback.php">Feedback</a></li>
             </ul>
           </li>
-
-          <!-- <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li>
-                <a href="#">Column 1 link 1</a>
-                <a href="#">Column 1 link 2</a>
-                <a href="#">Column 1 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 2 link 1</a>
-                <a href="#">Column 2 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 3 link 1</a>
-                <a href="#">Column 3 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 4 link 1</a>
-                <a href="#">Column 4 link 2</a>
-                <a href="#">Column 4 link 3</a>
-              </li>
-            </ul>
-          </li> -->
-
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="getstarted scrollto" href="logout.php">Logout</a></li>
         </ul>
@@ -219,10 +172,6 @@ if(isset($_POST['submit'])){
     <span class="input-group-text" id="basic-addon3">State</span>
     <input type="text" class="form-control" name="state" placeholder="state"  id="basic-url" aria-describedby="basic-addon3">
   </div>
-  <!-- <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon3">District</span>
-    <input type="text" class="form-control" name="district" placeholder="district"  id="basic-url" aria-describedby="basic-addon3">
-  </div> -->
   <div class="input-group mb-3">
     <input type="file" class="form-control" name="photo1" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
     <span class="input-group-text" id="basic-addon2">.img</span>
@@ -235,19 +184,8 @@ if(isset($_POST['submit'])){
     <span class="input-group-text">Description</span>
     <textarea class="form-control" name="description" placeholder="package description" aria-label="With textarea"></textarea>
   </div>
-  
-  
   <button class="btn btn-warning" name="submit" style="margin-top: 30px;">Let's go</button>
-  
-  
 </form>
-
-
-
-
-
-
-
 </div>
 </div>
 </section>

@@ -11,9 +11,6 @@ if(isset($_POST['submit'])){
   }
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +21,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
     <div class="box">
-
         <video src="./images/video.mp4" id="bg-video" loop muted autoplay></video>
 
         <div class="container">

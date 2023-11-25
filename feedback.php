@@ -90,32 +90,6 @@ $data=mysqli_query($conn,"SELECT users.user_id,users.first_name,users.last_name,
               <li><a href="feedback.php">Feedback</a></li>
             </ul>
           </li>
-
-          <!-- <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li>
-                <a href="#">Column 1 link 1</a>
-                <a href="#">Column 1 link 2</a>
-                <a href="#">Column 1 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 2 link 1</a>
-                <a href="#">Column 2 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 3 link 1</a>
-                <a href="#">Column 3 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 4 link 1</a>
-                <a href="#">Column 4 link 2</a>
-                <a href="#">Column 4 link 3</a>
-              </li>
-            </ul>
-          </li> -->
-
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="getstarted scrollto" href="logout.php">Logout</a></li>
         </ul>
@@ -139,10 +113,10 @@ $data=mysqli_query($conn,"SELECT users.user_id,users.first_name,users.last_name,
         if(empty($row['reply'])){
         ?>
     <div class=" border-3 one card" >
-      <h5 class="card-header" ><?php echo $row['first_name'],$row['last_name'];?></h5>
+      <h5 class="card-header" ><?php echo $row['first_name'],'_',$row['last_name'];?></h5>
       <div class="card-body" >
         <h5 class="card-title"><?php echo $row['feedback'];?></h5>
-        <p class="card-text"><?php echo $row['final_date'];?></p>
+        <p class="card-text"><?php echo $row['initial_date'];?></p>
         <a href="reply_feedback.php?id=<?php echo $row['f_id'];?>" class="btn btn-primary">Reply</a>
         <a href="view_user.php?id=<?php echo $row['user_id'];?>" class="btn btn-warning">user</a>
         <a href="remove_feedback.php?id=<?php echo $row['f_id'];?>" class="btn btn-danger">Cancel</a>
@@ -154,24 +128,10 @@ $data=mysqli_query($conn,"SELECT users.user_id,users.first_name,users.last_name,
         }
   }
   ?>
-
-
         </div>
-
-
       </div>
-
-
-
     </div>
-
-
-
   </section>
-
-
-
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

@@ -6,8 +6,6 @@ if(!isset($_SESSION['type'])){
 include "connection.php";
 $sql=mysqli_query($conn,"SELECT * FROM packages");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,14 +44,6 @@ $sql=mysqli_query($conn,"SELECT * FROM packages");
       box-shadow: 5px 10px 10px #1a1515;
     }
   </style>
-
-  <!-- =======================================================
-  * Template Name: FlexStart
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -83,42 +73,12 @@ $sql=mysqli_query($conn,"SELECT * FROM packages");
                 <ul>
                   <li><a href="add_packages.php">Add Package</a></li>
                   <li><a href="view_packages.php">View Package</a></li>
-                  <!-- <li><a href="#">Edit Package</a></li>
-                  <li><a href="#">Remove Package</a></li> -->
-                  <!-- <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li> -->
                 </ul>
               </li>
               <li><a href="quires.php">Quires</a></li>
               <li><a href="feedback.php">Feedback</a></li>
             </ul>
           </li>
-
-          <!-- <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li>
-                <a href="#">Column 1 link 1</a>
-                <a href="#">Column 1 link 2</a>
-                <a href="#">Column 1 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 2 link 1</a>
-                <a href="#">Column 2 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 3 link 1</a>
-                <a href="#">Column 3 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 4 link 1</a>
-                <a href="#">Column 4 link 2</a>
-                <a href="#">Column 4 link 3</a>
-              </li>
-            </ul>
-          </li> -->
-
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="getstarted scrollto" href="logout.php">Logout</a></li>
         </ul>
@@ -149,7 +109,6 @@ $sql=mysqli_query($conn,"SELECT * FROM packages");
   </div>
 </div>
 </div>
-
   </div>
 </div>
 
@@ -157,16 +116,7 @@ $sql=mysqli_query($conn,"SELECT * FROM packages");
 <?php
 }
 ?>
-
-
-
 </section>
-
-
-
-
-
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

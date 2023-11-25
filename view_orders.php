@@ -6,8 +6,6 @@ if(!isset($_SESSION['type'])){
 include "connection.php";
 $data=mysqli_query($conn,"SELECT users.user_id,orders.o_id,users.email,users.phone, packages.p_name,users.first_name,users.last_name FROM orders INNER JOIN packages ON orders.p_id = packages.p_id INNER JOIN users ON users.user_id = orders.user_id GROUP BY users.user_id ORDER BY orders.date ASC;");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,14 +40,6 @@ $data=mysqli_query($conn,"SELECT users.user_id,orders.o_id,users.email,users.pho
       box-shadow: 5px 5px 10px #1a1515;
     }
   </style>
-
-  <!-- =======================================================
-  * Template Name: FlexStart
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -67,11 +57,9 @@ $data=mysqli_query($conn,"SELECT users.user_id,orders.o_id,users.email,users.pho
         <ul>
           <li><a class="nav-link scrollto active" href="home.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
           <li><a class="nav-link scrollto " href="#portfolio">Profile</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a href="view_orders.php">Orders</a></li> 
-          <!-- <li><a href="blog.html">Blog</a></li> -->
           <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="view_users.php">Users</a></li>
@@ -79,42 +67,12 @@ $data=mysqli_query($conn,"SELECT users.user_id,orders.o_id,users.email,users.pho
                 <ul>
                   <li><a href="add_packages.php">Add Package</a></li>
                   <li><a href="view_packages.php">View Package</a></li>
-                  <!-- <li><a href="#">Edit Package</a></li>
-                  <li><a href="#">Remove Package</a></li> -->
-                  <!-- <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li> -->
                 </ul>
               </li>
               <li><a href="quires.php">Quires</a></li>
               <li><a href="feedback.php">Feedback</a></li>
             </ul>
           </li>
-
-          <!-- <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li>
-                <a href="#">Column 1 link 1</a>
-                <a href="#">Column 1 link 2</a>
-                <a href="#">Column 1 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 2 link 1</a>
-                <a href="#">Column 2 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 3 link 1</a>
-                <a href="#">Column 3 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 4 link 1</a>
-                <a href="#">Column 4 link 2</a>
-                <a href="#">Column 4 link 3</a>
-              </li>
-            </ul>
-          </li> -->
-
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="getstarted scrollto" href="logout.php">Logout</a></li>
         </ul>
@@ -132,8 +90,7 @@ $data=mysqli_query($conn,"SELECT users.user_id,orders.o_id,users.email,users.pho
         <div class="col-10">
           <?php 
       while($row=mysqli_fetch_assoc($data))
-      {
-        
+      {  
        ?> 
     <div class="border-3 one card" >
       <h5 class="card-header" ><?php echo $row['first_name'],$row['last_name'];?></h5>
@@ -146,28 +103,13 @@ $data=mysqli_query($conn,"SELECT users.user_id,orders.o_id,users.email,users.pho
         
       </div>
     </div>
-      
-    <?php
-        
+    <?php     
   }
   ?>
-
-
         </div>
-
-
       </div>
-
-
-
     </div>
-
-
-
   </section>
-
-
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
